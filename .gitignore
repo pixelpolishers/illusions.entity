@@ -19,3 +19,8 @@
 *.exe
 *.out
 *.app
+
+# Project output
+build/
+intermediate/
+libs/

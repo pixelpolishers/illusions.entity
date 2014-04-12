@@ -1,0 +1,29 @@
+{
+	"name": "illusions.entity",
+	"description": "An entity/component library with support for subsystems.",
+	"license": "MIT",
+	"projects": [{
+		"name": "illusions.entity"
+		"dependencies": {
+			"pixelpolishers/system": "*"
+		},
+		"paths": {
+			"include": "includes"
+		},
+		"source": {
+			"paths": ["includes", "source"]
+		},
+	}, {
+		"name": "illusions.entity.tests",
+		"dependencies": {
+			"pixelpolishers/system": "*",
+			"pixelpolishers/system.test": "*"
+		},
+		"paths": {
+			"include": ["includes", "tests"]
+		},
+		"source": {
+			"paths": ["tests"]
+		},
+	}]
+}

@@ -1,5 +1,5 @@
 {
-	"name": "illusions.entity",
+	"name": "pixelpolishers/illusions.entity",
 	"description": "An entity/component library with support for subsystems.",
 	"license": "MIT",
 	"projects": [{

@@ -1,29 +1,41 @@
 {
-	"name": "pixelpolishers/illusions.entity",
-	"description": "An entity/component library with support for subsystems.",
-	"license": "MIT",
-	"projects": [{
-		"name": "illusions.entity"
-		"dependencies": {
-			"pixelpolishers/system": "*"
-		},
-		"paths": {
-			"include": "includes"
-		},
-		"source": {
-			"paths": ["includes", "source"]
-		},
-	}, {
-		"name": "illusions.entity.tests",
-		"dependencies": {
-			"pixelpolishers/system": "*",
-			"pixelpolishers/system.test": "*"
-		},
-		"paths": {
-			"include": ["includes", "tests"]
-		},
-		"source": {
-			"paths": ["tests"]
-		},
-	}]
+    "name": "illusions/entity",
+    "description": "An entity/component library with support for subsystems.",
+    "license": "MIT",
+    "projects": [{
+        "name": "illusions.entity",
+        "type": "static-library",
+        "dependencies": {
+            "pixelpolishers/system": "*"
+        },
+        "paths": {
+            "include": ["includes"]
+        },
+        "pch": {
+            "header": "Illusions/Entity/PrecompiledHeader.hpp",
+            "source": "source/Illusions/Entity/PrecompiledHeader.cpp"
+        },
+        "source": {
+            "paths": ["includes/Illusions/Entity", "source/Illusions/Entity"],
+            "sources": [{
+                "name": "Component",
+                "paths": ["includes/Illusions/Entity/Component", "source/Illusions/Entity/Component"]
+            }, {
+                "name": "Entity",
+                "paths": ["includes/Illusions/Entity/Entity", "source/Illusions/Entity/Entity"]
+            }, {
+                "name": "Subsystem",
+                "paths": ["includes/Illusions/Entity/Subsystem", "source/Illusions/Entity/Subsystem"]
+            }]
+        },
+        "configurations": [{
+            "name": "Debug",
+            "debug": true,
+            "output": "libs/$(ideproject.name)_d"
+        }, {
+            "name": "Release",
+            "debug": false,
+            "output": "libs/$(ideproject.name)"
+        }]
+    }]
 }
